@@ -96,6 +96,19 @@ function loadWindowUptimeDelay(configFileObj) {
     }, launchDelay * 1000);
   }
 
+  mainWindow.webContents.on('did-fail-load', function(event, errorCode, errorDescription) {
+
+    console.log('FAILING TO LOAD');
+    console.log('errorCode: ', errorCode);
+    console.log('errorDescription: ', errorDescription);
+
+    // console.log('event: ', event);
+  });
+
+  // mainWindow.webContents.on('will-navigate', function(event) {
+  //   console.log('event: ', event);
+  // });
+  //
 }
 
 app.on('window-all-closed', function() {

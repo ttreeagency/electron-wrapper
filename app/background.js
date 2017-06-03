@@ -61,7 +61,7 @@ app.on('ready', function () {
   if (env.name === 'test') {
     mainWindow.loadURL('file://' + __dirname + '/spec.html');
   } else {
-    const configFile = '/usr/local/etc/kiosk/config.json';
+    const configFile = __dirname + '/../config/config.json';
     loadWindowConfigFile(configFile);
   }
 
